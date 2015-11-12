@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "title": "Topping schema",
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "id_field",
+            "args": {
+                "primary_key": true
+            }
+        },
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "description": {
+            "required": false,
+            "type": "text"
+        },
+        "pizza_id": {
+            "required": false,
+            "type": "foreign_key",
+            "args": {
+                "ref_document": "Pizza",
+                "ref_column": "pizza.id",
+                "ref_column_type": "id_field"
+            }
+        }
+    }
+}
